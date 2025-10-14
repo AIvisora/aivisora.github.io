@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #0a0a0a;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* Header CSS*/
+.AppHeader {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a, #282828);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centers vertically */
+  background: black;
+  text-align: center;
+}
+
+.AppHeader h1 {
+  font-size: 48px;
+  margin-bottom: -10px;
+  justify-content: center;
+}
+
+.AppHeaderP1 {
+  font-size: 16px;
+  margin-bottom: 80px;
+  margin-top: 20px;
+}
+.AppHeaderP2 {
+  font-size: 30px; /* Bigger text */
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.Link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.Link::after {
+  content: " →"; /* Adds right arrow */
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.Link:hover {
+  text-decoration: underline; /* Only underline on hover */
+}
+
+/* Section CSS*/
+
+section {
+  padding: 60px 20px;
+  height: 100vh;
+  width: 100%;
+}
+.Section h1 {
+  font-weight: 500;
+  size: 29px;
+}
+
+.NextPageLinks {
+}
+
+.InsideSectionHeading {
+  font-weight: bolder;
+  font-size: 130%;
+  margin-bottom: 10px;
+}
+
+/* About CSS*/
+.InsideSectionBoldness {
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  width: 50%;
+  padding: 15px;
+  margin-left: 25%;
+}
+#light {
+  font-weight: lighter;
+  font-size: 16px;
+  align-content: left;
+}
+#Architecture {
+  width: 80%;
+  margin-top: 20px;
+  margin-bottom: auto;
+}
+
+/* Feature CSS*/
+.feature-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.feature {
+  width: 30%;
+  min-width: 200px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 2px;
+  color: black;
+}
