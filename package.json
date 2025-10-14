@@ -1,7 +1,7 @@
 {
   "name": "aivisora",
   "version": "1.0.0",
-  "homepage": " https://github.com/AIvisora/AIvisora.git",
+  "homepage": " https://github.com/AIvisora/AIvisora",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
