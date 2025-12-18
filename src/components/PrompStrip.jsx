@@ -4,16 +4,30 @@ import "./PromptStrip.css";
 
 const PromptStrip = () => {
   const prompts = [
-    "How to perform wide squat?",
-    "How does deep learning work?",
-    "how to sit on horse?",
-    "how blood will transformed in our body?",
-    "how to fix two pipes?",
-    "A DNA structure w/t its structure",
-    "Explain transformers architecture?",
-    "how a human brain works with nearons",
-    "show me prework out for deadlift?",
-    "how tennis court look like show me w/two players playin on?",
+    // Fitness & Anatomy
+    "How to perform a wide squat and highlight the primary muscles in RED",
+    "Show basic full-body stretching positions for beginners",
+    "Explain how body posture affects balance during heavy deadlifts",
+
+    // Biology & Medicine
+    "Visualize how blood flow changes when arteries get blocked",
+    "Show the structure of DNA with labeled components",
+    "Explain how neurons communicate inside the human brain",
+
+    // Daily Life / How-to
+    "I bought a new washing machine — show me how to operate it step by step",
+    "How to sit correctly on a horse with proper posture",
+    "Explain how a water purifier works internally",
+
+    // Engineering & Mechanics
+    "Demonstrate how to fix two leaking pipes with correct joint alignment",
+    "Explain how gears transfer motion inside a machine",
+    "Show how electricity flows in a basic household circuit",
+
+    // Sports & Education
+    "Explain the rules of a tennis court with dimensions and two players playing",
+    "Teach the cricket cover drive and show how body physics affects the shot",
+    "Explain how a car braking system works using simple visuals",
   ];
 
   return (

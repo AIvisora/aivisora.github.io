@@ -1,7 +1,7 @@
 {
   "name": "aivisora",
   "version": "1.0.0",
-  "homepage": " https://github.com/AIvisora/",
+  "homepage": "https://aivisora.github.io/",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "gh-pages": "^6.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
