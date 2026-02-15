@@ -8,6 +8,10 @@ body {
   color: white;
   text-align: center;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 /* =========================================================
    APP LAYOUT – TWO COLUMN SYSTEM
@@ -171,10 +175,10 @@ body {
 ========================================================= */
 section {
   width: 100%;
-  min-height: 100vh;
-  padding: 80px 100px;
+  padding: 120px 100px;
   box-sizing: border-box;
 }
+
 
 /* =========================================================
    ABOUT SECTION – ENHANCED PIPELINE
@@ -182,7 +186,7 @@ section {
 .about-section {
   width: 100%;
   background: #000;
-  padding: 140px 0;
+  padding: 54px 0;
 }
 
 .about-inner {
@@ -338,6 +342,7 @@ section {
 ========================================================= */
 .features-section {
   background: #000;
+  padding: 0px 100px;
 }
 
 .features-title {
@@ -409,6 +414,7 @@ section {
   max-width: 1400px;
   margin: 0 auto;
   background: #000;
+  
 }
 
 
@@ -480,15 +486,12 @@ section {
 ========================================================= */
 .contact-section {
   width: 100%;
-  min-height: 100vh;
+  padding: 0px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 0;
-
-  box-sizing: border-box;
 }
+
 
 .contact-section h2 {
   font-size: 42px;

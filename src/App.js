@@ -52,7 +52,7 @@ function App() {
             "Failed to send message. Please try again or email us directly.",
         });
         setIsSubmitting(false);
-      }
+      },
     );
   };
 
@@ -111,9 +111,8 @@ function App() {
             <div className="about-inner">
               {/* Hero text with accent line */}
               <p className="about-hero-text">
-                Platforms helps you by providing interactive real time 3D
-                visualization interface paired w/the AI driven characters and
-                Avatars{" "}
+                A prompt-to-3D visualization engine <br />
+                for structured and interactive learning.{" "}
               </p>
 
               {/* Enhanced Pipeline with numbered steps */}
@@ -272,10 +271,7 @@ function App() {
 
             <div className="usecases-grid">
               <a href="#" className="usecase-card">
-                <img
-                  src="/Images/usecase3.png"
-                  alt="Learning & Education"
-                />
+                <img src="/Images/usecase3.png" alt="Learning & Education" />
                 <div className="usecase-content">
                   <h3>Learning & Education</h3>
                   <p>
@@ -297,10 +293,7 @@ function App() {
               </a>
 
               <a href="#" className="usecase-card">
-                <img
-                  src="/Images/usecase2.png"
-                  alt="Engineering & Labs"
-                />
+                <img src="/Images/usecase2.png" alt="Engineering & Labs" />
                 <div className="usecase-content">
                   <h3>Engineering & Labs</h3>
                   <p>
