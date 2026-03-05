@@ -1,129 +1,98 @@
-import React from "react";
+import React, { useState } from "react";
 import Marquee from "react-fast-marquee";
 import "./PromptStrip.css";
 
 const PromptStrip = () => {
-const prompts = [
-  // Fitness & Anatomy
-  "How to perform a wide squat and highlight the primary muscles in RED",
-  "Show full-body stretching positions with posture alignment guides",
-  "Explain how body posture affects balance during heavy deadlifts",
-  "Visualize joint angles and muscle engagement during a proper deadlift",
-  "Show center of gravity shifts during sprint acceleration",
-  "Demonstrate shoulder rotation mechanics in a tennis serve",
-  "Explain muscle activation during a push-up with labeled groups",
-  "Show spine alignment differences between correct and incorrect posture",
-  "Visualize knee tracking during a squat to prevent injury",
-  "Explain hip hinge mechanics in compound lifts",
-  "Show core stabilization during plank variations",
-  "Demonstrate ankle mobility during running stride",
-  "Visualize force transfer from legs to arms in a punch",
-  "Explain balance control during single-leg exercises",
-  "Show rotational torque in a baseball swing",
+  const [pausedRow, setPausedRow] = useState(null);
+  const prompts = [
+    // 🧠 Biology & Medicine — WOW factor
+    "Show me exactly what happens inside my brain when I fall in love",
+    "Visualize a cancer cell dividing and how chemotherapy stops it",
+    "Show how a single virus enters a healthy cell and hijacks it",
+    "Walk me through what happens in my body during a panic attack",
+    "Show the exact moment a bone fractures under impact in slow motion",
+    "Visualize how Alzheimer's destroys neural connections over 10 years",
+    "Show how a surgeon repairs a torn ACL step by step in 3D",
+    "Demonstrate how a heart attack happens inside a blocked artery",
+    "Visualize how anesthesia puts the brain to sleep at the molecular level",
+    "Show how a kidney stone forms and travels through the body",
 
-  // Biology & Medicine
-  "Visualize how blood flow changes when arteries get blocked",
-  "Show the structure of DNA with labeled components",
-  "Explain how neurons communicate inside the human brain",
-  "Demonstrate electrical and chemical signaling across a synapse",
-  "Show oxygen exchange inside the lungs at the alveoli level",
-  "Visualize plaque buildup progression inside arteries",
-  "Explain how insulin regulates glucose at the cellular level",
-  "Show how muscles contract at the microscopic level",
-  "Visualize the immune response to a viral infection",
-  "Explain how vaccines trigger antibody production",
-  "Show how kidney filtration removes waste from blood",
-  "Demonstrate hormone signaling between glands",
-  "Visualize how the liver processes toxins",
-  "Explain cell division during mitosis step by step",
-  "Show neural pathway activation during memory recall",
+    // ⚡ Physics & Engineering — Mind-bending
+    "Show me why a bridge doesn't collapse under 10,000 cars",
+    "Visualize what actually happens inside a nuclear reactor core",
+    "Show how a black hole bends spacetime around it",
+    "Demonstrate how a earthquake wave travels through the Earth's crust",
+    "Show the exact moment a lightning bolt forms between cloud and ground",
+    "Visualize how a Formula 1 car generates downforce at 300 km/h",
+    "Show what happens inside a jet engine during takeoff thrust",
+    "Demonstrate how a tsunami builds from an underwater earthquake",
+    "Visualize how a bullet travels through ballistic gel in slow motion",
+    "Show how a skyscraper sways in wind without falling",
 
-  // Daily Life / How-to
-  "I bought a new washing machine — show me how to operate it step by step",
-  "How to sit correctly on a horse with proper posture and balance alignment",
-  "Explain how a water purifier works internally with filtration stages",
-  "Show internal components of a refrigerator and cooling cycle",
-  "Demonstrate how a ceiling fan motor converts electricity into rotation",
-  "Explain pressure buildup inside a pressure cooker with valve mechanics",
-  "Show how microwave radiation heats food molecules",
-  "Visualize the charging cycle inside a lithium-ion battery",
-  "Explain how an elevator pulley system lifts weight",
-  "Show how a door lock mechanism operates internally",
-  "Demonstrate airflow inside an air conditioner",
-  "Visualize water flow through household plumbing",
-  "Explain how a gas stove ignites fuel safely",
-  "Show internal parts of a mechanical wristwatch",
-  "Demonstrate how a bicycle gear system shifts speeds",
+    // 🌍 Daily Life — Instantly relatable
+    "Show me exactly how my Wi-Fi signal travels through walls to my phone",
+    "Visualize what happens inside my stomach when I eat junk food",
+    "Show how my car engine starts from key turn to first combustion",
+    "Demonstrate what happens inside my phone battery as it dies",
+    "Show how traffic jams form even when nobody causes an accident",
+    "Visualize how a lie detector reads stress in the human body",
+    "Show what my spine looks like after 8 hours of sitting at a desk",
+    "Demonstrate how fingerprint scanners read unique patterns",
+    "Show how noise-cancelling headphones eliminate sound waves",
+    "Visualize what happens to my lungs after one cigarette",
 
-  // Engineering & Mechanics
-  "Demonstrate how to fix two leaking pipes with correct joint alignment",
-  "Explain how gears transfer motion inside a machine",
-  "Show how electricity flows in a basic household circuit",
-  "Visualize torque distribution inside a gearbox",
-  "Explain how a hydraulic press multiplies force step by step",
-  "Show brake pad pressure and disc friction during car braking",
-  "Demonstrate suspension compression over uneven terrain",
-  "Explain thrust generation inside a jet engine with airflow stages",
-  "Visualize piston movement inside a combustion engine",
-  "Show how a differential splits torque between wheels",
-  "Explain structural load distribution in a bridge",
-  "Demonstrate magnetic field formation around a conductor",
-  "Visualize energy conversion in a wind turbine",
-  "Show how shock absorbers dampen vibrations",
-  "Explain airflow over an airplane wing creating lift",
+    // 🏛️ History & Events — Storytelling
+    "Reconstruct the Battle of Thermopylae with 300 Spartans in 3D",
+    "Show how the Egyptian pyramids were built block by block",
+    "Visualize the moment the Titanic splits and sinks in real time",
+    "Demonstrate how the Apollo 11 lunar module landed on the moon",
+    "Show how the Roman Colosseum looked on gladiator fight day",
+    "Reconstruct how Pompeii was buried by Mount Vesuvius eruption",
+    "Visualize how D-Day Normandy beach landing was coordinated",
+    "Show how the Berlin Wall fell and people crossed in 1989",
 
-  // Sports & Education
-  "Explain the rules of a tennis court with dimensions and two players playing",
-  "Teach the cricket cover drive and show how body physics affects the shot",
-  "Explain how a car braking system works using simple visuals",
-  "Visualize bat angle and foot placement in a cricket cover drive",
-  "Demonstrate ball trajectory and spin in a googly delivery",
-  "Show player positioning and movement in a football formation",
-  "Explain how spin affects a tennis ball bounce",
-  "Visualize biomechanics of a high jump takeoff",
-  "Demonstrate momentum transfer in a boxing punch",
-  "Show bowling arm rotation mechanics in cricket",
-  "Explain footwork patterns in badminton",
-  "Visualize balance control during gymnastics landing",
-  "Show stride length effects in sprint performance",
-  "Demonstrate passing formations in basketball",
-  "Explain racket angle impact in table tennis",
+    // 💡 Concepts & Systems — Eye-opening
+    "Show how compound interest turns $1000 into $1M over 40 years",
+    "Visualize how misinformation spreads across a social network in hours",
+    "Show what happens to plastic after you throw it in the ocean",
+    "Demonstrate how a democratic election gets manipulated through gerrymandering",
+    "Visualize how global supply chains broke during COVID-19",
+    "Show how a startup grows from 2 people to 2000 in an org chart",
+    "Demonstrate how inflation silently eats your savings over 20 years",
+    "Show how a coral reef ecosystem collapses from rising temperatures",
 
-  // Systems & Concepts
-  "Visualize how social media algorithms amplify content through feedback loops",
-  "Explain inflation flow from central bank policy to consumer prices",
-  "Show supply chain movement from raw materials to retail stores",
-  "Demonstrate traffic congestion buildup using flow dynamics",
-  "Visualize how blockchain validates transactions across nodes",
-  "Show climate feedback loops between carbon, temperature, and oceans",
-  "Explain network effects in a growing social platform",
-  "Visualize capital flow inside a startup ecosystem",
-  "Demonstrate information propagation in a communication network",
-  "Show organizational hierarchy and decision pathways",
-  "Explain how recommendation systems rank content",
-  "Visualize feedback loops in economic growth models",
-  "Demonstrate crowd behavior patterns in public spaces",
-  "Show energy flow within a smart grid system",
-  "Explain ecosystem balance between predators and prey"
-];
-
-
+    // 🚀 Space & Future — Aspirational
+    "Show what it looks like to land on Mars in a SpaceX Starship",
+    "Visualize how a wormhole would connect two points in spacetime",
+    "Show how solar panels on a house generate and store electricity",
+    "Demonstrate how a self-driving car sees the road using sensors",
+    "Visualize what the inside of a fusion reactor looks like at ignition",
+    "Show how quantum computing processes information differently than classical",
+    "Demonstrate how CRISPR cuts and edits a strand of DNA",
+    "Show what happens inside a lithium battery at the atomic level",
+  ];
   return (
     <div className="prompt-container">
       {[...Array(3)].map((_, rowIndex) => (
-        <Marquee
+        <div
           key={rowIndex}
-          gradient={false}
-          direction={rowIndex % 2 === 0 ? "left" : "right"}
-          speed={30}
-          className="marquee-row"
+          onMouseEnter={() => setPausedRow(rowIndex)}
+          onMouseLeave={() => setPausedRow(null)}
         >
-          {prompts.map((prompt, index) => (
-            <div key={index} className="prompt-box">
-              {prompt}
-            </div>
-          ))}
-        </Marquee>
+          <Marquee
+            gradient={false}
+            direction={rowIndex % 2 === 0 ? "left" : "right"}
+            speed={30}
+            play={pausedRow !== rowIndex}
+            className="marquee-row"
+          >
+            {prompts.map((prompt, index) => (
+              <div key={index} className="prompt-box">
+                {prompt}
+              </div>
+            ))}
+          </Marquee>
+        </div>
       ))}
     </div>
   );

@@ -1,14 +1,15 @@
 .prompt-container {
   width: 100%;
-  max-width: 100vw;
-  overflow: hidden; /* Ensures boxes don’t go off-screen */
-  background-color: black;
-  color: white;
-  padding: 10px 0;
+  overflow: hidden;
+  background-color: var(--bg-soft);
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
-  gap: 5px; /* Adjust row spacing */
+  gap: 8px;
   margin-bottom: 10px;
+ /* border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+*/
 }
 
 .marquee-row {
@@ -16,30 +17,36 @@
   overflow: hidden;
   width: 100%;
   white-space: nowrap;
-  max-height: 70px; /* Restricts row height */
+  max-height: 70px;
 }
 
 .prompt-box {
-  width: 320px; /* Adjust box size */
-  height: 50px; /* Keep height fixed */
-  margin: 0 8px; /* Adjust spacing */
-  overflow-wrap: break-word; /* Ensure text stays inside */
-  word-wrap: break-word; /* Break long words */
+  width: 320px;
+  height: 54px;
+  margin: 0 8px;
   white-space: normal;
-  padding: 10px;
-  background-color: #202020;
+  padding: 10px 16px;
+  background-color: white;
+  border: 1px solid var(--border-light);
   border-radius: 10px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease-in-out;
-  opacity: 0.7;
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  opacity: 0.85;
+  cursor: pointer;
 }
 
 .prompt-box:hover {
-  transform: scale(1.1);
+  transform: scale(1.06);
   opacity: 1;
-  background-color: rgb(200, 191, 191);
-  color: black;
+  background-color: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+  z-index: 10;
+  position: relative;
 }
